@@ -27,7 +27,11 @@ angular.module('starter', ['ionic'])
     }, {
         'src' : 'img/pic3.jpg'
     }];
-
+    
+    $scope.testClick = function () {
+        alert("hello");
+    }
+    
     $scope.clipSrc = 'img/coffee.MOV';
 
     $scope.showImages = function(index) {
@@ -36,9 +40,7 @@ angular.module('starter', ['ionic'])
     }
     
     
-    $scope.testClick = function () {
-        alert("hello");
-    }
+
 
     
     $scope.playVideo = function() {
