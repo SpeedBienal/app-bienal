@@ -21,15 +21,15 @@
     bottom: 0;
     left: 0;
     margin: center;
-    overflow: auto;
-    position: fixed;
+    overflow: fixed;
+    position: bottom;
     right: 0;
     top: 0;
 }
 .button .button .button-block .button-calm{
     bottom: 0;
     top: 100;
-    position: bottom;
+    position: fixed;
 }
  
 .slider {
