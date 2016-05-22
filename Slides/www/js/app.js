@@ -11,13 +11,49 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
     }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
+    if(window.StatusBar) {
       StatusBar.styleDefault();
     }
   });
 })
+
+.controller('MediaCtrl', function($scope, $ionicModal) {
+
+    $scope.allImages = [{
+        'src' : 'img/pic1.jpg'
+    }, {
+        'src' : 'img/pic2.jpg'
+    }, {
+        'src' : 'img/pic3.jpg'
+    }];
+    
+    $scope.testClick = function () {
+        confirm("Usted ha votado por esta foto\n"
+        +"muchas gracias");
+    }
+    
+    $scope.clipSrc = 'img/coffee.MOV';
+
+    $scope.showImages = function(index) {
+        $scope.activeSlide = index;
+        $scope.showModal('templates/image-popover.html');
+    }
+    
+   $scope.showModal = function(templateUrl) {
+        $ionicModal.fromTemplateUrl(templateUrl, {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+        });
+    }
+
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+        $scope.modal.remove()
+    };
+});

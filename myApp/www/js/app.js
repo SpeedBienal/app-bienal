@@ -41,15 +41,7 @@ angular.module('starter', ['ionic'])
         $scope.showModal('templates/image-popover.html');
     }
     
-    
-
-
-    
-    $scope.playVideo = function() {
-        $scope.showModal('templates/video-popover.html');
-    }
-
-    $scope.showModal = function(templateUrl) {
+   $scope.showModal = function(templateUrl) {
         $ionicModal.fromTemplateUrl(templateUrl, {
             scope: $scope,
             animation: 'slide-in-up'
@@ -59,7 +51,6 @@ angular.module('starter', ['ionic'])
         });
     }
 
-    // Close the modal
     $scope.closeModal = function() {
         $scope.modal.hide();
         $scope.modal.remove()
