@@ -22,6 +22,12 @@ angular.module('app.controllers', ['ionic'])
         'src' : 'img/pic3.jpg'
     }];
     
+    $scope.aImages = [{
+        'src' : 'img/imagen-pantalla1.png'
+    }, {
+        'src' : 'img/musica.jpg'
+    }];
+    
     $scope.testClick = function () {
         confirm("Usted ha votado por esta foto\n"
         +"muchas gracias");
