@@ -3,10 +3,9 @@
       <ion-content class="has-header padding" ng-controller="homeCtrl" style="background-color: #393E80;">  
        
        <div>
-           <a class="item-list-detail transparent">
+           <a class="item item-list-detail transparent">
            <ion-scroll direction="x">
-            <img ng-repeat="image in Images" style="heigt: 100%; width: 100%;" ng-src="{{image.src}}" class="image-list"/>
-            <!--<img src="img/imagen-pantalla1.png" >-->
+            <img ng-repeat="image in aImages" style="heigt: 381px; width: 100%;" ng-src="{{image.src}}" class="image-list"/>
            </ion-scroll>
            </a>
        </div>

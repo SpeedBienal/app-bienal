@@ -25,7 +25,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/cart.html',
-        controller: 'cartCtrl'
+        controller: 'homeCtrl'
       }
     }
   })
@@ -35,7 +35,17 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/cloud.html',
-        controller: 'cloudCtrl'
+        controller: 'homeCtrl'
+      }
+    }
+  })
+  
+    .state('menu.letras', {
+    url: '/page4',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/letras.html',
+        controller: 'homeCtrl'
       }
     }
   })
@@ -46,7 +56,7 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-$urlRouterProvider.otherwise('/side-menu21/page1')
+//$urlRouterProvider.otherwise('/side-menu21/page1')
 
   
 

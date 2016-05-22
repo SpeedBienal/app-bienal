@@ -53,12 +53,4 @@ angular.module('app.controllers', ['ionic'])
         $scope.modal.remove();
     };
 })
-   
-.controller('cartCtrl', function($scope) {
-
-})
-   
-.controller('cloudCtrl', function($scope) {
-
-});
   

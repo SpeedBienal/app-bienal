@@ -1,3 +1,27 @@
-<ion-view title="Cloud" id="page3" class=" ">
-    <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="AudioVisuales" id="page3" class=" ">
+    <ion-pane>
+      <ion-content class="has-header padding" ng-controller="homeCtrl" style="background-color: #ED7635;">  
+       
+       <div>
+           <img src="img/audiovisuales.jpg" style="heigt: 100%; width: 50%; align: left; vertical-align: text-top; float: left;">
+           <p align="justify">En el área se podrán presentar no sólo los géneros más habituales como ficción, documental, 
+               animación, experimental, etc., sino también todas aquellas producciones que son creadas a través de los 
+               distintos códigos de la expresión audiovisual y de su transversalidad como instalaciones multimediales, VJ, 
+               video clip, motion graphics, video minuto, videojuego, stop motion, etc.</p>
+       </div>
+       
+        <div class="item item-divider">
+            
+            <i class="ion-images"></i>
+            <b>Artistas</b>/Puede votar por su artista favorito
+        </div>
+
+        <a class="item item-list-detail transparent">
+            <ion-scroll direction="x">
+                <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+            </ion-scroll>
+        </a>
+
+      </ion-content>
+    </ion-pane>
 </ion-view>
