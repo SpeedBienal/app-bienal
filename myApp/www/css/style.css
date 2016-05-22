@@ -21,7 +21,7 @@
     bottom: 0;
     left: 0;
     margin: center;
-    overflow: fixed;
+    overflow: absolute;
     position: bottom;
     right: 0;
     top: 0;
