@@ -1,7 +1,6 @@
-<ion-view title="Inicio" id="home">
+<ion-view title="Inicio" hide-back-button="true" id="page1" class=" ">
     <ion-pane>
-      <ion-content class="has-header padding" ng-controller="homeCtrl" style="background-color: #393E80;">  
-       
+    <ion-content padding="true" class="has-header">       
        <div>
            <a class="item item-list-detail transparent">
            <ion-scroll direction="x">
@@ -21,7 +20,6 @@
                 <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
             </ion-scroll>
         </a>
-
-      </ion-content>
+        </ion-content>
     </ion-pane>
 </ion-view>

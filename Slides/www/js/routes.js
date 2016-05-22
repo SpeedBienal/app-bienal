@@ -10,42 +10,28 @@ angular.module('app.routes', [])
     
   
 
-      .state('menu.home', {
+      .state('inicio', {
     url: '/page1',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
-      }
-    }
+    templateUrl: 'templates/inicio.html',
+    controller: 'inicioCtrl'
   })
 
-  .state('menu.cart', {
+  .state('menu.musica', {
     url: '/page2',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/cart.html',
-        controller: 'homeCtrl'
+        templateUrl: 'templates/musica.html',
+        controller: 'musicaCtrl'
       }
     }
   })
 
-  .state('menu.cloud', {
+  .state('menu.audioVisuales', {
     url: '/page3',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/cloud.html',
-        controller: 'homeCtrl'
-      }
-    }
-  })
-  
-    .state('menu.letras', {
-    url: '/page4',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/letras.html',
-        controller: 'homeCtrl'
+        templateUrl: 'templates/audioVisuales.html',
+        controller: 'audioVisualesCtrl'
       }
     }
   })
@@ -56,7 +42,33 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-$urlRouterProvider.otherwise('/side-menu21/page1')
+  .state('letras', {
+    url: '/page4',
+    templateUrl: 'templates/letras.html',
+    controller: 'letrasCtrl'
+  })
+
+  .state('menu.visuales', {
+    url: '/page5',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/visuales.html',
+        controller: 'visualesCtrl'
+      }
+    }
+  })
+
+  .state('menu.escenicas', {
+    url: '/page6',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/escenicas.html',
+        controller: 'escenicasCtrl'
+      }
+    }
+  })
+
+$urlRouterProvider.otherwise('/page1')
 
   
 

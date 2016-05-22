@@ -1,0 +1,30 @@
+<ion-view title="Visuales" id="page5" class=" ">
+    <ion-pane>
+      <ion-content padding="true" class="has-header"ng-controller="homeCtrl" style="background-color: #393E80;">
+        <div>
+           <img src="img/VISUALES.jpg" style="heigt: 100%; width: 50%; align: left; vertical-align: text-top; float: left;">
+           <p align="justify">La convocatoria se dirige especialmente a los jóvenes
+                                que experimentan en el amplio campo del lenguaje visual.
+                                Se apela a que las producciones den cuenta de los más
+                                diversos abordajes del discurso contemporáneo, como así
+                                también revelen amplitud de planteos técnicos y de
+                                contenido, en orden a mostrar una producción artística
+                                acorde a las nuevas tendencias y códigos visuales. En el
+                                campo de expresiones visuales los soportes, contenidos,
+                                técnicas y temáticas son libres.</p>
+       </div>
+       
+        <div class="item item-divider">
+            
+            <i class="ion-images"></i>
+            <b>Artistas</b>/Puede votar por su artista favorito
+        </div>
+
+        <a class="item item-list-detail transparent">
+            <ion-scroll direction="x">
+                <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+            </ion-scroll>
+        </a>
+      </ion-content>
+    </ion-pane>
+</ion-view>
