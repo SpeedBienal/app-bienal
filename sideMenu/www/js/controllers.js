@@ -12,7 +12,9 @@ angular.module('app.controllers', [])
     $scope.aImages = [{
         'src' : 'img/imagen-pantalla1.png'
     }, {
-        'src' : 'img/musica.jpg'
+        'src' : 'img/imagen2-pantalla1.png'
+    },{
+        'src' : 'img/imagen3-pantalla1.png'
     }];
     
     $scope.testClick = function () {
@@ -39,4 +41,24 @@ angular.module('app.controllers', [])
         $scope.modal.hide();
         $scope.modal.remove();
     };
+})
+
+.controller('musicaCtrl', function($scope) {
+
+})
+   
+.controller('audioVisualesCtrl', function($scope) {
+
+})
+      
+.controller('letrasCtrl', function($scope) {
+
+})
+   
+.controller('visualesCtrl', function($scope) {
+
+})
+   
+.controller('escenicasCtrl', function($scope) {
+
 })
