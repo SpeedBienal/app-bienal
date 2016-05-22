@@ -1,6 +1,6 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['ionic'])
   
-.controller('inicioCtrl', function($scope) {
+.controller('inicioCtrl', function($scope, $ionicModal) {
     $scope.allImages = [{
         'src' : 'img/pic1.jpg'
     }, {
@@ -8,24 +8,13 @@ angular.module('app.controllers', [])
     }, {
         'src' : 'img/pic3.jpg'
     }];
-    
-    $scope.aImages = [{
-        'src' : 'img/imagen-pantalla1.png'
-    }, {
-        'src' : 'img/musica.jpg'
-    }];
-    
-    $scope.testClick = function () {
-        confirm("Usted ha votado por esta foto\n"
-        +"muchas gracias");
-    };
-    
+
     $scope.showImages = function(index) {
         $scope.activeSlide = index;
         $scope.showModal('templates/image-popover.html');
     };
-    
-   $scope.showModal = function(templateUrl) {
+
+    $scope.showModal = function(templateUrl) {
         $ionicModal.fromTemplateUrl(templateUrl, {
             scope: $scope,
             animation: 'slide-in-up'
@@ -33,10 +22,11 @@ angular.module('app.controllers', [])
             $scope.modal = modal;
             $scope.modal.show();
         });
-    };
+    }
 
+    // Close the modal
     $scope.closeModal = function() {
         $scope.modal.hide();
-        $scope.modal.remove();
+        $scope.modal.remove()
     };
-})
+});

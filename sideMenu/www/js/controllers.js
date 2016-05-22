@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
   
-.controller('inicioCtrl', function($scope) {
+.controller('inicioCtrl', function($scope,$ionicModal) {
     $scope.allImages = [{
         'src' : 'img/pic1.jpg'
     }, {
@@ -16,8 +16,8 @@ angular.module('app.controllers', [])
     }];
     
     $scope.testClick = function () {
-        confirm("Usted ha votado por esta foto\n"
-        +"muchas gracias");
+        confirm("Usted va a votar por este artista/obra\n"
+        +"esta seguro?");
     };
     
     $scope.showImages = function(index) {
@@ -40,24 +40,3 @@ angular.module('app.controllers', [])
         $scope.modal.remove();
     };
 })
-   
-.controller('musicaCtrl', function($scope) {
-
-})
-   
-.controller('audioVisualesCtrl', function($scope) {
-
-})
-      
-.controller('letrasCtrl', function($scope) {
-
-})
-   
-.controller('visualesCtrl', function($scope) {
-
-})
-   
-.controller('escenicasCtrl', function($scope) {
-
-})
- 
