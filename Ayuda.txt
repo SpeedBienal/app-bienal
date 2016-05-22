@@ -1,0 +1,5 @@
+Auth0: https://auth0.com/docs/native-platforms/android
+Restfull API: https://amatellanes.wordpress.com/2014/01/02/android-integrando-un-restful-web-service-en-android/
+  "       " : http://gausswebapp.com/ejemplo-conectar-api-rest-android.html
+  "       " : http://programmerguru.com/android-tutorial/android-restful-webservice-tutorial-how-to-call-restful-webservice-in-android-part-3/
+  "       " : http://code.tutsplus.com/tutorials/create-a-weather-app-on-android--cms-21587
