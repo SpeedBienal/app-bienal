@@ -1,0 +1,27 @@
+<ion-view title="Inicio" id="home">
+    <ion-pane>
+      <ion-content class="has-header padding" ng-controller="homeCtrl" style="background-color: #393E80;">  
+       
+       <div>
+           <a class="item item-list-detail transparent">
+           <ion-scroll direction="x">
+            <img ng-repeat="image in aImages" style="heigt: 381px; width: 100%;" ng-src="{{image.src}}" class="image-list"/>
+           </ion-scroll>
+           </a>
+       </div>
+       
+        <div class="item item-divider">
+            
+            <i class="ion-images"></i>
+            Galeria
+        </div>
+
+        <a class="item item-list-detail transparent">
+            <ion-scroll direction="x">
+                <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+            </ion-scroll>
+        </a>
+
+      </ion-content>
+    </ion-pane>
+</ion-view>
