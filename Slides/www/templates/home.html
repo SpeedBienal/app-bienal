@@ -1,19 +1,18 @@
-<ion-view title="Home" id="page1" class=" ">
-    <ion-content padding="true" class="has-header" ng-controller="MediaCtrl">
-    <div class="item item-divider">
-        <i class="ion-images"></i>
-        Imagenes de las obras
-    </div>
+<ion-view title="Home" id="Index">
+    <ion-pane>
+      <ion-content class="has-header padding" ng-controller="homeCtrl">
 
-    <a class="item item-list-detail">
-        <ion-scroll direction="x">
-            <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
-        </ion-scroll>
-    </a>
-        <div class="spacer" style="height: 100px;"></div>
-        <div class="spacer" style="height: 100px;"></div>
-        <div class="spacer" style="height: 100px;"></div>
-        <img class="footer" src="img/pie-de-pagina.png" style="position: bottom; width: 100%"/>
+        <div class="item item-divider">
+            <i class="ion-images"></i>
+            Imagenes de las obras
+        </div>
+
+        <a class="item item-list-detail">
+            <ion-scroll direction="x">
+                <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+            </ion-scroll>
+        </a>
+
       </ion-content>
-    </ion-content>
+    </ion-pane>
 </ion-view>
