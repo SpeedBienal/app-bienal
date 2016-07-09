@@ -1,5 +1,14 @@
 <ion-view title="Musica" id="page2" class=" ">
-    <ion-content padding="true" class="has-header" ng-controller="inicioCtrl" style="background-color: #F8B451;">
+     <ion-content padding="true" class="has-header" ng-controller="inicioCtrl" style="background-color: #F8B451;">
+
+        <div>
+        <a class="item item-list-detail transparent">
+            <ion-scroll direction="x">
+                <img ng-repeat="image in aImages" style="heigt: 381px; width: 100%;" ng-src="{{image.src}}" ng-click="showEvent($index)" class="image-list"/>
+            </ion-scroll>
+        </a>  
+       </div>
+
         <div>
            <img src="img/musica.jpg" style="heigt: 100%; width: 50%; align: left; vertical-align: text-top; float: left;"><p align="justify">La convocatoria apunta a que las propuestas recurran y den 
                cuenta de los más diversos abordajes musicales. 

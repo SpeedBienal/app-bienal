@@ -1,0 +1,27 @@
+<div class="modal image-modal">
+    <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false" active-slide="activeSlide">
+        <ion-slide ng-repeat="image in allImages">
+            <img ng-src="{{image.src}}" class="fullscreen-image"/>
+
+                  <ion-content>
+                
+                <div class="card" ng-repeat="event in events">
+                    <div class="item item-divider">
+                        {{event.title}}
+                    </div>                    
+                    <div class="item item-text-wrap">
+                        {{ event.description }}
+                        <p/>
+                        <strong>When: {{ event.date | date:'short' }}</strong>
+                        <p ng-if="event.status">This event is added to your calendar already!</p>
+                        <button ng-if="!event.status" ng-click="addEvent(event,$index)" class="button button-block button-balanced">Add to Calendar</button>
+                    </div>
+                </div>
+                
+      </ion-content>
+
+            
+        </ion-slide>
+          
+    </ion-slide-box>
+</div>
