@@ -48,7 +48,7 @@ angular.module('app.controllers', [])
     };
 })
 
-.controller('musicaCtrl', function($scope, $ionicModal) {
+.controller('musicaCtrl', function($scope, $ionicModal, $ionicPopup) {
    $scope.allImages = [{
         'src' : 'img/pic1.jpg'
     }, {
@@ -102,7 +102,24 @@ angular.module('app.controllers', [])
         $scope.modal.remove();
     };
 
-    $scope.createCalendarEvent = function(index) {
+    $scope.createCalendarEvent = function(index, buttonIndex) {
+        var options = {
+        //message: 'share this', // not supported on some apps (Facebook, Instagram)
+        //subject: 'the subject', // fi. for email
+        //files: ['', ''], // an array of filenames either locally or remotely
+        url: 'http://pfprogramacion.com',
+        chooserTitle: 'Seleccione una Red Social' // Android only, you can override the default share sheet title
+        }
+
+        var onSuccess = function(result) {
+            window.plugins.toast.showLongBottom("Compartido con éxito!");
+        console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+        console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+        }
+
+        var onError = function(msg) {
+        console.log("Sharing failed with message: " + msg);
+        }
         switch(index)
         {
             case 0:
@@ -149,13 +166,20 @@ angular.module('app.controllers', [])
         }
         try{
             window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
-            window.plugins.toast.showLongBottom('Añadido '+ title);
-            }
-            catch(e)
-            {
-                alert('error '+ e);
-            }     
-    }
+            window.plugins.toast.showLongBottom("Evento agregado al calendario con éxito!");
+
+            window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+
+            //var r = navigator.notification.confirm("Compartir por Facebook?");
+            //if(r)
+            //{
+                //window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, 'http://pfprogramacion.com', function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+            //}
+        }
+    finally
+    {
+    };
+};
 })
    
 .controller('audioVisualesCtrl', function($scope, $ionicModal) {
@@ -176,18 +200,13 @@ angular.module('app.controllers', [])
     }];
     
     $scope.testClick = function () {
-        navigator.notification.confirm("Usted va a votar por este artista/obra", "Confirme Voto", ['OK', 'Cancel']);
-      var btnIndex = buttonIndex;
-      switch(btnIndex)
+    var r = navigator.notification.confirm("Usted va a votar por este artista/obra", "Confirme Voto", ['OK', 'Cancel']);
+      if(r)
       {
-          case 1:
           window.plugins.toast.showLongBottom("Voto Registrado Con Exito!");
-          break
-          case 2:
+      }
+      else{
           window.plugins.toast.showLongBottom("Voto Cancelado");
-          break
-          default:
-          console.log("nada");
       }
     };
     
