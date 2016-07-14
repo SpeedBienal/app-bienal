@@ -1,9 +1,12 @@
+<ion-view title="Artista/Obra" id="" class=" ">
 <div class="modal image-modal">
     <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false" active-slide="activeSlide">
         <ion-slide ng-repeat="image in allImages">
             <img ng-src="{{image.src}}" class="fullscreen-image"/>
             <button ng-click="testClick()" class="button button-block button-calm">Votar</button>
+            
         </ion-slide>
           
     </ion-slide-box>
 </div>
+</ion-view>

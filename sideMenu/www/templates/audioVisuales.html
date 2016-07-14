@@ -1,5 +1,12 @@
 <ion-view title="Audio/Visuales" id="page3" class=" ">
-    <ion-content padding="true" class="has-header" ng-controller="inicioCtrl" style="background-color: #ED7635;">
+    <ion-content padding="true" class="has-header" ng-controller="audioVisualesCtrl" style="background-color: #ED7635;">
+        <div>
+           <a class="item item-list-detail transparent">
+           <ion-scroll direction="x">
+            <img ng-repeat="image in aImages" style="heigt: 381px; width: 100%;" ng-src="{{image.src}}" ng-click="createCalendarEvent($index)" class="image-list"/>
+           </ion-scroll>
+           </a>
+       </div>
          <div>
            <img src="img/audiovisuales.jpg" style="heigt: 100%; width: 50%; align: left; vertical-align: text-top; float: left;">
            <p align="justify">En el área se podrán presentar no sólo los géneros más habituales como ficción, documental, 
