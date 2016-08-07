@@ -19,12 +19,17 @@ angular.module('app.controllers', [])
     }];
     
     $scope.testClick = function () {
+<<<<<<< HEAD
         navigator.notification.confirm("Usted va a votar por este artista/obra", "Confirme Voto", ['OK', 'Cancel']);
       var btnIndex = buttonIndex;
       if(btnIndex == 1)
       {
           window.plugins.toast.showLongBottom("Voto Registrado Con Exito!")
       }
+=======
+        confirm("Usted va a votar por este artista/obra\n"
+        +"esta seguro?");
+>>>>>>> parent of 3e08ee6... pantalla popup para agregar evento a calendario
     };
     
     $scope.showImages = function(index) {
@@ -41,6 +46,7 @@ angular.module('app.controllers', [])
             $scope.modal.show();
         });
     };
+<<<<<<< HEAD
 
     $scope.closeModal = function() {
         $scope.modal.hide();
@@ -97,10 +103,14 @@ angular.module('app.controllers', [])
         });
     };
 
+=======
+
+>>>>>>> parent of 3e08ee6... pantalla popup para agregar evento a calendario
     $scope.closeModal = function() {
         $scope.modal.hide();
         $scope.modal.remove();
     };
+<<<<<<< HEAD
 
     $scope.createCalendarEvent = function(index, buttonIndex) {
         var options = {
@@ -167,6 +177,9 @@ angular.module('app.controllers', [])
         try{
             window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
             window.plugins.toast.showLongBottom("Evento agregado al calendario con éxito!");
+=======
+})
+>>>>>>> parent of 3e08ee6... pantalla popup para agregar evento a calendario
 
             window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 
@@ -221,6 +234,7 @@ angular.module('app.controllers', [])
         
     };
 
+<<<<<<< HEAD
    $scope.showModal = function(templateUrl) {
         $ionicModal.fromTemplateUrl(templateUrl, {
             scope: $scope,
@@ -244,6 +258,11 @@ angular.module('app.controllers', [])
         url: 'http://pfprogramacion.com',
         chooserTitle: 'Seleccione una Red Social' // Android only, you can override the default share sheet title
         }
+=======
+})
+      
+.controller('letrasCtrl', function($scope) {
+>>>>>>> parent of 3e08ee6... pantalla popup para agregar evento a calendario
 
         var onSuccess = function(result) {
             window.plugins.toast.showLongBottom("Compartido con éxito!");
