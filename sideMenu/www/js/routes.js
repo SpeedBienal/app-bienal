@@ -76,6 +76,36 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('menu.youtube', {
+    url: '/page7',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/transmision.html',
+        controller: 'transmisionCtrl'
+      }
+    }
+  })
+
+    .state('menu.votos', {
+    url: '/page8',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/votacion.html',
+        controller: 'votoCtrl'
+      }
+    }
+  })
+  
+  .state('menu.vMusica', {
+    url: '/page9',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vMusica.html',
+        controller: 'vMusicaCtrl'
+      }
+    }
+  })
+
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
   

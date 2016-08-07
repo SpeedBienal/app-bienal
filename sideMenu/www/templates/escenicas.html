@@ -1,10 +1,15 @@
 <ion-view title="Escenicas" id="page6" class=" ">
     <ion-content padding="true" class="has-header" ng-controller="escenicasCtrl" style="background-color: #EA5A57;">
         <div>
-           <a class="item item-list-detail transparent">
-           <ion-scroll direction="x">
-            <img ng-repeat="image in aImages" style="heigt: 381px; width: 100%;" ng-src="{{image.src}}" ng-click="createCalendarEvent($index)" class="image-list"/>
-           </ion-scroll>
+           <a class="item transparent">
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(0)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(1)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(2)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(3)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(4)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(5)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(6)" class="image-list"/><br>
+            <img style="heigt: 381px; width: 100%;" ng-src="img/imagen-pantalla1.png" ng-click="createCalendarEvent(7)" class="image-list"/><br>
            </a>
 	    </div>
         <div>
@@ -14,18 +19,6 @@
                así como también contenidos diversos, prestando mayor atención a la presentación de producciones acordes a las 
                nuevas tendencias del campo. La temática y las características de la puesta en escena son libres y se tendrá 
                especialmente en cuenta el trabajo en su carácter integral. </p>
-       </div>
-       
-        <div class="item item-divider">
-            
-            <i class="ion-images"></i>
-            <b>Artistas</b>/Puede votar por su artista favorito
-        </div>
-
-        <a class="item item-list-detail transparent">
-            <ion-scroll direction="x">
-                <img ng-repeat="image in allImages" ng-src="{{image.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
-            </ion-scroll>
-        </a>  
+       </div>  
         </ion-content>
 </ion-view>
