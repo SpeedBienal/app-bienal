@@ -3,16 +3,19 @@
         <FORM NAME="myform" ACTION="" METHOD="GET">
         <div class="list list-inset">
             <label class="item item-input">
-                <input type="text" name="Nombre" placeholder="Nombre">
+                <input id="Nombre" ng-model="main.name" type="text" name="Nombre" placeholder="Nombre" required>
+                    <div ng-messages="myform.name.$error" ng-show="myform.name.$touched">
+                        <p ng-message="required">Your name is required.</p>
+                    </div>
             </label>
             <label class="item item-input">
-                <input type="text" name="Apellido" placeholder="Apellido">
+                <input type="text" name="Apellido" placeholder="Apellido" width="100%">
             </label>
             <label class="item item-input">
-                <input type="number" name="DNI" placeholder="DNI">
+                <input type="number" name="DNI" placeholder="DNI" width="100%">
             </label>
             <label class="item item-input">
-                <input type="email" name="Email" placeholder="Email">
+                <input type="email" name="Email" placeholder="Email" width="100%">
             </label>
         </div>
 
