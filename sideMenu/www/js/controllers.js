@@ -769,6 +769,14 @@ angular.module('app.controllers', [])
         var ApellidoP = document.myform.Apellido.value;
         var DniP = document.myform.DNI.value;
         var EmailP = document.myform.Email.value;
+
+        window.localStorage.setItem("NombreP", NombreP);
+        window.localStorage.setItem("ApellidoP", ApellidoP);
+        window.localStorage.setItem("DniP", DniP);
+        window.localStorage.setItem("EmailP", EmailP);
+        window.localStorage.setItem("uuid", device.uuid);
+        window.localStorage.setItem("votado", votado);
+        
         if(NombreP == "" || ApellidoP == "" || DniP == "" || EmailP == "")
         {
             var alertPopup = $ionicPopup.alert ({
@@ -780,28 +788,9 @@ angular.module('app.controllers', [])
         {
             if(!window.localStorage.getItem("votado"))
             {
-            var confirmPopup = $ionicPopup.confirm({
-                title: 'Confirmar Ingreso',
-                template: 'Esta seguro que los datos son correctos?'
-            })
-                confirmPopup.then(function(res) {
-                if(res) {
                     window.plugins.toast.showLongBottom("Bienvenido para votar!");
                     votado = true;
-                    window.localStorage.setItem("NombreP", NombreP);
-                    window.localStorage.setItem("ApellidoP", ApellidoP);
-                    window.localStorage.setItem("DniP", DniP);
-                    window.localStorage.setItem("EmailP", EmailP);
-                    window.localStorage.setItem("uuid", device.uuid);
-                    window.localStorage.setItem("votado", votado);
                     $state.go('menu.vMusica');
-                }
-                else
-                {
-                    window.plugins.toast.showLongBottom("Voto Cancelado");
-                }
-            
-                })
                 }else{
                     window.plugins.toast.showLongBottom("Usted ya ha votado ");
             }
