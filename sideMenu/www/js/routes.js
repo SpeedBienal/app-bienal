@@ -104,6 +104,15 @@ angular.module('app.routes', [])
     }
   })
 
+ .state('menu.vAV', {
+    url: '/page10',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vAV.html',
+        controller: 'vAV'
+      }
+    }
+  })
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
   

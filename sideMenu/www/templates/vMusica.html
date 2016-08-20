@@ -1,73 +1,16 @@
 <ion-view title="Voto Musica" id="page9" class=" ">
     <ion-content padding="true" class="has-header" ng-controller="vMusicaCtrl" style="background-color: #F8B451;">
         <div>
-        <div>
+        <img src="img/bannermusica.png" style="heigt: 100%; width: 100%">
            <a class="item item-list-detail transparent">
-            <form name="Musica" action="" method="GET">
-                <h1>Categoria A</h1>
-                    <ion-radio ng-model="choice"  ng-value="Efrain Caraballo">Efraín Caraballo</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Habla La Muda">Habla La Muda</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Meraki">Meraki</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Rap Libre">Rap Libre</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Sin devolucion">Sin devolución</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Sinner">Sinner</ion-radio>
-                <h1>Categoria B</h1>
-                    <ion-radio ng-model="choice"  ng-value="Ajo Pachuco">Ajo Pachuco</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Alejandra Latosinsky">Alejandra Latosinsky</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="ArteFacto">ArteFacto</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Balu">Balú</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Bordon Claro">Bordon Claro</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Candela en majuma">Candela en majúma</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Clemenza">Clemenza</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Copánahue">Copánahue</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Cosmudus">Cosmudus</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Dante Leonel">Dante Leonel</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Dúo Cecchini-Somaglia">Dúo Cecchini-Somaglia</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Duo Sachayoj">Duo Sachayoj</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Edu Figueroa">Edu Figueroa</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Emi Billud">Emi Billud</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Emilia Cersoo">Emilia Cersoo</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Ensamble Sinfónico del Litoral">Ensamble Sinfónico del Litoral</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Equilátera">Equilátera</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Flores de tipa">Flores de tipa</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Furor Sanandi">Furor Sanandi</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="GPS Trío">GPS Trío</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Guatusai">Guatusai</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Gustavo De Marco">Gustavo De Marco</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Juane Voutat">Juane Voutat</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="La conexión">La conexión</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="La vituela">La vituela</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Las Damajuanas">Las Damajuanas</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Las garras de betún">Las garras de betún</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Liebre">Liebre</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Los cuervos">Los cuervos</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Mastodonte">Mastodonte</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Mayday">Mayday</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Mi ambulancia negra">Mi ambulancia negra</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Mu.Lit.A (Músicos del Litoral Argentino)">Mu.Lit.A (Músicos del Litoral Argentino)</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Nada Más y Nada Menos">Nada Más y Nada Menos</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Nativos Mutantes">Nativos Mutantes</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Naub">Naub</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Non Bis">Non Bis</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Notargiano Tavella Parrilla Trío">Notargiano Tavella Parrilla Trío</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Órco">Órco</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Parzival">Parzival</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="QunQay">QunQay</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Río loco">Río loco</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Santa fe Jazz Ensamble Junior">Santa fe Jazz Ensamble Junior</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Santa Karma">Santa Karma</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Sine Die">Sine Die</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Skamas">Skamas</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Subliminal">Subliminal</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Tabula Rasa">Tabula Rasa</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Tembleque">Tembleque</ion-radio>                    
-                    <ion-radio ng-model="choice"  ng-value="The experience">The experience</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Trío Cosa">Trío Cosa</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Trío Tres Hileras">Trío Tres Hileras</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Último trago">Último trago</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Vaso Exquisito">Vaso Exquisito</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Vaya Paradoja!">Vaya Paradoja!</ion-radio>
-                    <ion-radio ng-model="choice"  ng-value="Zen Sessions">Zen Sessions</ion-radio>
+            <form name="Musica">
+                    <ion-radio ng-repeat="item in serverSideList"
+                            ng-value="item.value"
+                            ng-model="data.serverSide"
+                            ng-change="serverSideChange(item)"
+                            name="server-side">
+                            {{ item.text }}
+                    </ion-radio>
             </form>
             </a>
         </div>

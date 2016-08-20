@@ -1,4 +1,3 @@
-/* Empty. Add your own CSS if you like */
 .image-modal {
     width: 100% !important;
     height: 100%;
@@ -70,4 +69,12 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+div.hscroller {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); 
 }
