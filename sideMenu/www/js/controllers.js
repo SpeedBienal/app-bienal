@@ -798,14 +798,17 @@ angular.module('app.controllers', [])
 	})
 
 .controller('vMusicaCtrl', function($scope, $ionicModal, $ionicPopup) {
+		var titulo = null;
+		var autor = null;
+		var categoria = null;
 
-	 $scope.serverSideList = [
-		{ text: "Efraín Caraballo", value: "Efraín Caraballo" },
-		{ text: "Habla La Muda", value: "Habla La Muda" },
-		{ text: "Meraki", value: "Meraki" },
-		{ text: "Rap Libre", value: "Rap Libre" },
-		{ text: "Sin devolución", value: "Sin devolución" },
-		{ text: "Sinner", value: "Sinner" },
+	 $scope.serverSideListA = [
+		{ text: "Efraín Caraballo"},
+		{ text: "Habla La Muda"},
+		{ text: "Meraki"},
+		{ text: "Rap Libre"},
+		{ text: "Sin devolución"},
+		{ text: "Sinner"},
 		{ text: "Categoria B", value: null },
 		{ text: "Ajo Pachuco", value: "Ajo Pachuco" },
 		{ text: "Alejandra Latosinsky", value: "Alejandra Latosinsky" },
@@ -898,7 +901,7 @@ angular.module('app.controllers', [])
 .controller('vAV', function($scope, $ionicModal, $ionicPopup) {
 
 	 $scope.serverSideList = [
-		{ text: "Efraín Caraballo", value: "Efraín Caraballo" },
+		{ text: "Sustancia", value: "Sustancia" },
 		{ text: "Habla La Muda", value: "Habla La Muda" },
 		{ text: "Meraki", value: "Meraki" },
 		{ text: "Rap Libre", value: "Rap Libre" },

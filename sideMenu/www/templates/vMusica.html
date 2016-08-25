@@ -3,15 +3,18 @@
         <div>
         <img src="img/bannermusica.png" style="heigt: 100%; width: 100%">
            <a class="item item-list-detail transparent">
-            <form name="Musica">
-                    <ion-radio ng-repeat="item in serverSideList"
-                            ng-value="item.value"
-                            ng-model="data.serverSide"
-                            ng-change="serverSideChange(item)"
-                            name="server-side">
+            <ion-list>
+                    <ion-header-bar class="bar bar-subheader">
+                        <h1>Categoria A</h1>
+                    </ion-header-bar>
+                    <ion-list ng-repeat="item in serverSideListA"
+                            ng-click="serverSideChange($index)">
                             {{ item.text }}
-                    </ion-radio>
-            </form>
+                    </ion-list>
+                    <ion-header-bar class="bar bar-subheader">
+                        <h1>Categoria B</h1>
+                    </ion-header-bar>
+            </ion-list>
             </a>
         </div>
     </ion-content>
