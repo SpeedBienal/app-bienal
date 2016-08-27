@@ -1,0 +1,17 @@
+<ion-view title="Voto Musica" id="page9" class=" ">
+    <ion-content padding="true" class="has-header" ng-controller="vMusicaCtrl" style="background-color: #F8B451;">
+        <img src="img/bannermusica.png" style="heigt: 100%; width: 100%">
+
+              <form name="Musica">
+                    </ion-header-bar>
+                    <ion-radio ng-repeat="item in serverSideList"
+                            ng-value="item.value"
+                            ng-value="item.value2"
+                            ng-model="data.serverSide"
+                            ng-click="serverSideChange(item)"
+                            name="server-side">
+                            {{ item.text }}
+                    </ion-radio>
+            </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-view title="Votar" id="page8" class=" ">
+    <ion-content padding="true" class="has-header" ng-controller="votoCtrl" style="background-color: #F8B451;">
+        <FORM NAME="myform" ACTION="" METHOD="GET">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input id="Nombre" ng-model="main.name" type="text" name="Nombre" placeholder="Nombre" required>
+                    <div ng-messages="myform.name.$error" ng-show="myform.name.$touched">
+                        <p ng-message="required">Your name is required.</p>
+                    </div>
+            </label>
+            <label class="item item-input">
+                <input type="text" name="Apellido" placeholder="Apellido" width="100%">
+            </label>
+            <label class="item item-input">
+                <input type="number" name="DNI" placeholder="DNI" width="100%">
+            </label>
+            <label class="item item-input">
+                <input type="email" name="Email" placeholder="Email" id="email" width="100%">
+            </label>
+        </div>
+
+         <button class="btn waves-effect waves-light" ng-click="testClick()">
+                    <i>Ingresar</i>
+                    <i class="ion-android-send left"></i>
+                </button>
+        </div>
+        </FORM>
+    </ion-content>
+</ion-view>

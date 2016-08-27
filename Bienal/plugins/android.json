@@ -1,0 +1,49 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "org.loicknuchel.cordova.deviceaccounts": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        }
+    }
+}
