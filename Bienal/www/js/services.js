@@ -1,10 +1,17 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+ .factory('personasService', personas_);
 
-}])
+  function personas_($http) {
+    return {
+      cotejar_datos_de_persona: function ( nombre, apellido, email, dni, uuid ) {
+        var obj = {nombre: nombre, apellido: apellido, email: email, dni: dni, uuid};
+        return $http
+          .post('http://localhost:3000/api/personas/buscar/', obj);
+      },
 
-.service('BlankService', [function(){
-
-}]);
-
+      enviar_voto: function ( obj ) {
+        return $http.post('http://localhost:3000/api/personas/', obj );
+      }
+    }
+  }

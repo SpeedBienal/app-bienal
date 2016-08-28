@@ -776,12 +776,18 @@ angular.module('app.controllers', [])
 			window.localStorage.setItem("DniP", DniP);
 			window.localStorage.setItem("EmailP", EmailP);
 			window.localStorage.setItem("uuid", device.uuid);
+			
 
 				if(!window.localStorage.getItem("votado"))
 				{
 						window.plugins.toast.showLongBottom("Bienvenido para votar!");
 						var votado = true;
 						window.localStorage.setItem("votado", votado);
+						 $scope.cotejar_datos_de_persona = function (nombre, apellido, email, dni, uuid) {
+      						return personasService.cotejar_datos_de_persona(window.localStorage.getItem(NombreP), 
+							  window.localStorage.getItem(ApellidoP), window.localStorage.getItem(EmailP), 
+							  window.localStorage.getItem(DniP), window.localStorage.getItem(uuid));
+    					};
 						$state.go('menu.vMusica');
 					}else{
 						window.plugins.toast.showLongBottom("Usted ya ha votado ");
@@ -805,6 +811,7 @@ angular.module('app.controllers', [])
 	.controller('vMusicaCtrl', function($scope, $ionicModal, $ionicPopup, $state) {
 
 		$scope.serverSideList = [
+			{ text: "Categoria A", value: null, value2: null},
 			{ text: "Efraín Caraballo", value: "Efraín Caraballo", value2: "a" },
 			{ text: "Habla La Muda", value: "Habla La Muda", value2: "a" },
 			{ text: "Meraki", value: "Meraki", value2: "a" },
@@ -869,8 +876,7 @@ angular.module('app.controllers', [])
 			{ text: "Zen Sessions", value: "Zen Sessions", value2: "b"}
 		];
 
-		$scope.serverSideChange = function(item, index) {
-			var indice = index;
+		$scope.serverSideChange = function(item) {
 				if(item.value!=null)
 				{
 					var confirmPopup = $ionicPopup.confirm({
@@ -886,7 +892,7 @@ angular.module('app.controllers', [])
 								window.localStorage.setItem("pseudonimo", item.value);
 								window.localStorage.setItem("categoria", "musica");
 								window.localStorage.setItem("clase", item.value2);
-								$state.go('menu.vAV');
+								//$state.go('menu.vAV');
 							}else{
 								window.plugins.toast.showLongBottom("Voto Cancelado");
 							} 
@@ -895,7 +901,7 @@ angular.module('app.controllers', [])
 		}
 	})
 
-.controller('vAV', function($scope, $ionicModal, $ionicPopup, $state) {
+.controller('vAVCtrl', function($scope, $ionicModal, $ionicPopup, $state) {
 
 		$scope.serverSideList = [
 			{ text: "Categoria A", value: null, value2: null},
@@ -988,3 +994,5 @@ angular.module('app.controllers', [])
 				}
 		}
 	})
+
+.controller('votacionCtrl', function($scope, $ionicModal, $ionicPopup, $state){	})
