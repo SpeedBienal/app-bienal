@@ -12,7 +12,7 @@ angular.module('app.controllers', [])
 .controller('musicaCtrl', function($scope, $ionicModal, $ionicPopup) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {
-		var options = {message: 'Voy a asistir a la 12° Bienal de Arte Joven de la UNL', 
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
 		chooserTitle: 'Compartir el evento en una Red Social' 
 		}
@@ -134,7 +134,7 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			default:
-				console.log("no mejoramos el codigo si no nos pagan mas");
+				console.log("Whaaaaaaat");
 		}
 		try{
 			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
@@ -161,7 +161,7 @@ angular.module('app.controllers', [])
 .controller('audioVisualesCtrl', function($scope, $ionicModal) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {
-		var options = {message: 'Voy a asistir a la 12° Bienal de Arte Joven de la UNL', 
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
 		chooserTitle: 'Compartir el evento en una Red Social' 
 		}
@@ -283,7 +283,7 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			default:
-				console.log("no mejoramos el codigo si no nos pagan mas");
+				console.log("Whaaaaaaat");
 		}
 		try{
 			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
@@ -311,7 +311,7 @@ angular.module('app.controllers', [])
 .controller('letrasCtrl', function($scope, $ionicModal) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {
-		var options = {message: 'Voy a asistir a la 12° Bienal de Arte Joven de la UNL', 
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
 		chooserTitle: 'Compartir el evento en una Red Social' 
 		}
@@ -433,7 +433,7 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			default:
-				console.log("no mejoramos el codigo si no nos pagan mas");
+				console.log("Whaaaaaaat");
 		}
 		try{
 			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
@@ -461,7 +461,7 @@ angular.module('app.controllers', [])
 .controller('visualesCtrl', function($scope, $ionicModal) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {
-		var options = {message: 'Voy a asistir a la 12° Bienal de Arte Joven de la UNL', 
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
 		chooserTitle: 'Compartir el evento en una Red Social' 
 		}
@@ -583,7 +583,7 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			default:
-				console.log("no mejoramos el codigo si no nos pagan mas");
+				console.log("Whaaaaaaat");
 		}
 		try{
 			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
@@ -611,7 +611,7 @@ angular.module('app.controllers', [])
 .controller('escenicasCtrl', function($scope, $ionicModal, $ionicPopup) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {
-		var options = {message: 'Voy a asistir a la 12° Bienal de Arte Joven de la UNL', 
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
 		chooserTitle: 'Compartir el evento en una Red Social' 
 		}
