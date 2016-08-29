@@ -113,6 +113,33 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('menu.vLetras', {
+    url: '/page11',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vLetras.html',
+        controller: 'vLetrasCtrl'
+      }
+    }
+  })
+  .state('menu.vVisuales', {
+    url: '/page12',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vVisuales.html',
+        controller: 'vVisualesCtrl'
+      }
+    }
+  })
+  .state('menu.vEscenicas', {
+    url: '/page13',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vEscenicas.html',
+        controller: 'vEscenicasCtrl'
+      }
+    }
+  })
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
   
