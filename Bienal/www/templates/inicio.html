@@ -1,18 +1,11 @@
 <ion-view title="12° Bienal de Arte Joven" id="page1" class=" ">
-	<ion-content padding="true" class="has-header" ng-controller="inicioCtrl" style="background-color: #393E80;">
-				<img style="heigt: 381px; width: 100%;" ng-src="img/cr.png" />
-					<br>
-				<img style="heigt: 381px; width: 100%;" ng-src="img/ptepta.png" />
-
-				<div>
-					<p align="justify">La convocatoria apunta a que las propuestas recurran y den 
-						cuenta de los más diversos abordajes musicales. 
-						En la presente edición, y en virtud de contemplar una mayor 
-						amplitud del campo musical, no sólo se pueden presentar los 
-						géneros habituales, sino que también serán consideradas todas 
-						aquellas producciones creadas a partir de los diversos códigos  
-						y géneros de la expresión musical, de su fusión y su 
-						transversalidad.</p>
-       			</div>
+	<ion-content padding="true" class="has-header" ng-controller="inicioCtrl" style="background: url('img/fondo.png');">
+		<img style="heigt: 381px; width: 100%;" ng-click="showBI()" ng-src="img/inicio.gif" />
+		<img style="heigt: 381px; width: 100%;" ng-click="share()"	ng-src="img/hashtag.png" />
+		<img style="heigt: 381px; width: 100%;" ng-click="vivo()"	ng-src="img/litus.png" />
+		<img style="heigt: 381px; width: 100%;" ng-click="showVI()"	ng-src="img/virt.png" />
+		<img style="heigt: 381px; width: 100%;" ng-click="showCR()"	ng-src="img/cr.png" />
+		<img style="heigt: 381px; width: 100%;" ng-click="showPP()"	ng-src="img/ptepta.png" />
+		<img style="heigt: 381px; width: 100%;" ng-click="showVT()"	ng-src="img/vot.png" />
 	</ion-content>
 </ion-view>

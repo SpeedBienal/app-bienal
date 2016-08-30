@@ -140,6 +140,69 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('menu.cielorazzo', {
+    url: '/page14',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/cielorrazzo.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
+  .state('menu.parteplaneta', {
+    url: '/page15',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/parteplaneta.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
+  .state('menu.virtmia', {
+    url: '/page16',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/virtmia.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
+  .state('menu.bienal', {
+    url: '/page17',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/bienal.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
+  .state('menu.vAgradece', {
+    url: '/page18',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/vAgradece.html',
+        controller: 'votacionCtrl'
+      }
+    }
+  })
+  .state('menu.creditos', {
+    url: '/page19',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/creditos.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
+  .state('menu.staff', {
+    url: '/page20',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/staff.html',
+        controller: 'inicioCtrl'
+      }
+    }
+  })
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
   

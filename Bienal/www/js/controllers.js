@@ -1,7 +1,139 @@
 angular.module('app.controllers', [])        
 
   //codigo feo por que nos pagaron poco por mucho xD
-.controller('inicioCtrl', function($scope,$ionicModal,$ionicPopup) {
+.controller('inicioCtrl', function($scope,$state,$ionicPopup) {
+	$scope.share = function(){
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
+		url: 'http://unl.edu.ar/bienal',
+		chooserTitle: 'Compartir con', 
+		}
+
+		var onSuccess = function(result) {
+			if(result.completed == true)
+				window.plugins.toast.showLongBottom("Compartido con éxito! en " + result.app);
+			else
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
+		}
+
+		var onError = function(msg) {
+		console.log("Sharing failed with message: " + msg);
+		}
+
+		var confirmPopup = $ionicPopup.confirm({
+			title: 'Compartir',
+			template: 'Compartir con amigos?'
+		})
+			confirmPopup.then(function(res) {
+			if(res) {
+				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+			}
+			else{
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
+			}
+		})
+	}
+
+	$scope.createCalendarEvent = function(index, buttonIndex) {
+		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
+		url: 'http://unl.edu.ar/bienal',
+		chooserTitle: 'Compartir con'
+		}
+
+		var onSuccess = function(result) {
+			if(result.completed == true)
+				window.plugins.toast.showLongBottom("Compartido con éxito! en " + result.app);
+			else
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
+		}
+
+		var onError = function(msg) {
+		console.log("Sharing failed with message: " + msg);
+		}
+		switch(index)
+		{
+		case 0:
+			var title = 'Virtmia';
+			var loc = 'Rectorado. Explanada';
+			var notes = '';
+			var startDate = new Date("September 2, 2016");
+			var endDate = new Date("");
+			var calendarName = "MyCal";
+			var e = '';
+			console.log(index);
+			startDate.setMinutes(0);
+			endDate.setMinutes(2400);
+			startDate.setSeconds(0);
+			break
+		case 1:
+			var title = 'Cielo Razzo';
+			var loc = 'FCJS. Patio de la Reforma';
+			var notes = '';
+			var startDate = new Date("September 2, 2016");
+			var endDate = new Date("");
+			var calendarName = "MyCal";
+			var e = '';
+			console.log(index);
+			startDate.setMinutes(0);
+			endDate.setMinutes(2400);
+			startDate.setSeconds(0);
+			break
+		case 2:
+			var title = 'Parteplaneta';
+			var loc = 'FCJS. Patio de la Reforma';
+			var notes = '';
+			var startDate = new Date("September 10, 2016");
+			var endDate = new Date("");
+			var calendarName = "MyCal";
+			var e = '';
+			console.log(index);
+			startDate.setMinutes(0);
+			endDate.setMinutes(2400);
+			startDate.setSeconds(0);
+			break
+		default:
+			console.log("Whaaaaaaat");
+		}
+		try{
+			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
+			window.plugins.toast.showLongBottom("Evento agregado al calendario con éxito!");
+			var confirmPopup = $ionicPopup.confirm({
+			title: 'Compartir',
+			template: options.chooserTitle+'?'
+		})
+			confirmPopup.then(function(res) {
+			if(res) {
+				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+			}
+			else{
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
+			}
+		})
+		}
+		finally
+		{
+		}
+	}
+
+	$scope.showBI = function(){
+		$state.go('menu.bienal');
+	}
+
+	$scope.showVI = function(){
+		$state.go('menu.virtmia');
+	}
+
+	$scope.showCR = function(){
+		$state.go('menu.cielorazzo');
+	}
+	$scope.showPP = function(){
+		$state.go('menu.parteplaneta');
+	}
+	$scope.vivo = function(){
+		$state.go('menu.youtube');
+	}
+	$scope.showVT = function(){
+		$state.go('menu.votos');
+	}
 })
 
 
@@ -14,7 +146,7 @@ angular.module('app.controllers', [])
 	$scope.createCalendarEvent = function(index, buttonIndex) {
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
-		chooserTitle: 'Compartir el evento en una Red Social' 
+		chooserTitle: 'Compartir con'
 		}
 
 		var onSuccess = function(result) {
@@ -30,10 +162,10 @@ angular.module('app.controllers', [])
 		switch(index)
 		{
 			case 0:
-				var title = 'Dia 1 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 3, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -43,10 +175,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 1:
-				var title = 'Dia 2 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 4, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -56,10 +188,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 2:
-				var title = 'Dia 3 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 5, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -69,10 +201,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 3:
-				var title = 'Dia 4 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 6, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -82,10 +214,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 4:
-				var title = 'Dia 5 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 7, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -95,10 +227,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 5:
-				var title = 'Dia 6 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 8, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -108,10 +240,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 6:
-				var title = 'Dia 7 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Musica';
+				var loc = 'Rectorado. FCJS';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 9, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -120,19 +252,7 @@ angular.module('app.controllers', [])
 				endDate.setMinutes(2400);
 				startDate.setSeconds(0);
 				break
-			case 7:
-				var title = 'Dia 8 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
+
 			default:
 				console.log("Whaaaaaaat");
 		}
@@ -148,7 +268,7 @@ angular.module('app.controllers', [])
 				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 			}
 			else{
-
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
 			}
 		})
 		}
@@ -163,7 +283,7 @@ angular.module('app.controllers', [])
 	$scope.createCalendarEvent = function(index, buttonIndex) {
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
-		chooserTitle: 'Compartir el evento en una Red Social' 
+		chooserTitle: 'Compartir con'
 		}
 
 		var onSuccess = function(result) {
@@ -179,10 +299,10 @@ angular.module('app.controllers', [])
 		switch(index)
 		{
 			case 0:
-				var title = 'Dia 1 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Foro Cultural. Sala Saer';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 3, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -192,10 +312,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 1:
-				var title = 'Dia 2 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Foro Cultural. Sala Saer';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 4, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -205,10 +325,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 2:
-				var title = 'Dia 3 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Foro Cultural. Sala Saer';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 5, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -218,10 +338,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 3:
-				var title = 'Dia 4 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Rectorado. Paraninfo';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 6, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -231,10 +351,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 4:
-				var title = 'Dia 5 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Foro. Rectorado';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 7, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -244,10 +364,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 5:
-				var title = 'Dia 6 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Rectorado. Paraninfo';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 8, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -257,23 +377,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 6:
-				var title = 'Dia 7 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Audiovisuales';
+				var loc = 'Rectorado. Paraninfo';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 7:
-				var title = 'Dia 8 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 9, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -313,7 +420,7 @@ angular.module('app.controllers', [])
 	$scope.createCalendarEvent = function(index, buttonIndex) {
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
-		chooserTitle: 'Compartir el evento en una Red Social' 
+		chooserTitle: 'Compartir con'
 		}
 
 		var onSuccess = function(result) {
@@ -329,10 +436,10 @@ angular.module('app.controllers', [])
 		switch(index)
 		{
 			case 0:
-				var title = 'Dia 1 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 3, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -342,10 +449,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 1:
-				var title = 'Dia 2 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 4, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -355,10 +462,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 2:
-				var title = 'Dia 3 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 5, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -368,10 +475,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 3:
-				var title = 'Dia 4 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 6, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -381,10 +488,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 4:
-				var title = 'Dia 5 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 7, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -394,10 +501,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 5:
-				var title = 'Dia 6 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 8, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -407,23 +514,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 6:
-				var title = 'Dia 7 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Letras';
+				var loc = 'Foro Cultural. Entrepiso';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 7:
-				var title = 'Dia 8 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 9, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -460,10 +554,10 @@ angular.module('app.controllers', [])
 
 .controller('visualesCtrl', function($scope, $ionicModal) {
 
-	$scope.createCalendarEvent = function(index, buttonIndex) {
+	$scope.share = function(){
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
-		chooserTitle: 'Compartir el evento en una Red Social' 
+		chooserTitle: 'Compartir con', 
 		}
 
 		var onSuccess = function(result) {
@@ -476,134 +570,19 @@ angular.module('app.controllers', [])
 		var onError = function(msg) {
 		console.log("Sharing failed with message: " + msg);
 		}
-		switch(index)
-		{
-			case 0:
-				var title = 'Dia 1 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 1:
-				var title = 'Dia 2 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 2:
-				var title = 'Dia 3 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 3:
-				var title = 'Dia 4 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 4:
-				var title = 'Dia 5 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 5:
-				var title = 'Dia 6 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 6:
-				var title = 'Dia 7 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 7:
-				var title = 'Dia 8 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			default:
-				console.log("Whaaaaaaat");
-		}
-		try{
-			window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate);
-			window.plugins.toast.showLongBottom("Evento agregado al calendario con éxito!");
-			var confirmPopup = $ionicPopup.confirm({
+
+		var confirmPopup = $ionicPopup.confirm({
 			title: 'Compartir',
-			template: options.chooserTitle+'?'
+			template: 'Compartir con amigos?'
 		})
 			confirmPopup.then(function(res) {
 			if(res) {
 				window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 			}
 			else{
-
+				window.plugins.toast.showLongBottom("Mala onda, cancelaste :(");
 			}
 		})
-		}
-		finally
-		{
-		}
 	}
 })
 
@@ -613,7 +592,7 @@ angular.module('app.controllers', [])
 	$scope.createCalendarEvent = function(index, buttonIndex) {
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
-		chooserTitle: 'Compartir el evento en una Red Social' 
+		chooserTitle: 'Compartir con'
 		}
 
 		var onSuccess = function(result) {
@@ -629,10 +608,10 @@ angular.module('app.controllers', [])
 		switch(index)
 		{
 			case 0:
-				var title = 'Dia 1 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 3, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -642,10 +621,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 1:
-				var title = 'Dia 2 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 4, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -655,10 +634,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 2:
-				var title = 'Dia 3 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 5, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -668,10 +647,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 3:
-				var title = 'Dia 4 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 6, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -681,23 +660,12 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 4:
-				var title = 'Dia 5 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
 				break
 			case 5:
-				var title = 'Dia 6 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 8, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -707,23 +675,10 @@ angular.module('app.controllers', [])
 				startDate.setSeconds(0);
 				break
 			case 6:
-				var title = 'Dia 7 interesante';
-				var loc = 'algun lugar del mundo';
+				var title = 'Escenicas';
+				var loc = 'Foro Cultural. Sala Maggi';
 				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
-				var endDate = new Date("");
-				var calendarName = "MyCal";
-				var e = '';
-				console.log(index);
-				startDate.setMinutes(0);
-				endDate.setMinutes(2400);
-				startDate.setSeconds(0);
-				break
-			case 7:
-				var title = 'Dia 8 interesante';
-				var loc = 'algun lugar del mundo';
-				var notes = 'My interesting Event notes.';
-				var startDate = new Date("August 14, 2016");
+				var startDate = new Date("September 9, 2016");
 				var endDate = new Date("");
 				var calendarName = "MyCal";
 				var e = '';
@@ -1207,7 +1162,7 @@ angular.module('app.controllers', [])
 				if(res) {
 					window.plugins.toast.showLongBottom("Gracias por su voto!");
 					window.localStorage.setItem("voto_escenicas", item.value);
-					//$state.go('menu.vLetras');
+					$state.go('menu.vAgradece');
 				}else{
 					window.plugins.toast.showLongBottom("Voto Cancelado");
 				} 

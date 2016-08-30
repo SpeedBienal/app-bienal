@@ -80,3 +80,11 @@ div.hscroller {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); 
 }
+
+span {
+    font-weight: 700;
+}
+
+p, html {
+    font-family: 'Libre Franklin', sans-serif;
+}
