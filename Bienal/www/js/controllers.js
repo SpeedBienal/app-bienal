@@ -1130,7 +1130,7 @@ angular.module('app.controllers', [])
 				if(res) {
 					window.plugins.toast.showLongBottom("Gracias por su voto!");
 					window.localStorage.setItem("voto_visuales", item.value);
-					$state.go('menu.vLetras');
+					$state.go('menu.vEscenicas');
 				}else{
 					window.plugins.toast.showLongBottom("Voto Cancelado");
 				} 
