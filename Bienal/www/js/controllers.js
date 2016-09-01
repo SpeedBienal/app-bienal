@@ -136,7 +136,6 @@ angular.module('app.controllers', [])
 	}
 })
 
-
 .controller('transmisionCtrl', function($scope,$ionicModal) {
 	
 })
@@ -585,8 +584,7 @@ angular.module('app.controllers', [])
 		})
 	}
 })
-
-   
+  
 .controller('escenicasCtrl', function($scope, $ionicModal, $ionicPopup) {
 
 	$scope.createCalendarEvent = function(index, buttonIndex) {

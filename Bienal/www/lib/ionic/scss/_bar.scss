@@ -207,7 +207,7 @@
     }
 
     &.back-button {
-      display: block;
+      display: none;
       margin-right: 5px;
       padding: 0;
       white-space: nowrap;
@@ -272,6 +272,7 @@
   .bar {
 
     .back-button .icon:before {
+      display: none;
       font-size: 24px;
     }
 
