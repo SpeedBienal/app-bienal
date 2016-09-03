@@ -1168,11 +1168,23 @@ angular.module('app.controllers', [])
 						obj.voto_musica = window.localStorage.getItem("voto_musica");
 						obj.voto_escenicas = window.localStorage.getItem("voto_escenicas");
 						obj.voto_letras = window.localStorage.getItem("voto_letras");
-						var res = $http.post('http://bienal.unl.edu.ar/api/v1/personas/'+obj);
-						 res.success(function(data, status, headers, config) {
-            				console.log(data);
-							$state.go('menu.vAgradece'); 
-						 })
+						 $scope.demoPost = function(){
+						$http({
+						method: 'POST',
+						url: 'http://bienal.unl.edu.ar:3000/api/v1/personas',
+						data: obj,
+						headers: {'Content-Type': 'application/x-www-form-urlencoded','Access-Control-Allow-Control':'*'}
+						})
+						.success(function(response) {
+						$state.go('menu.vAgradece'); 
+						console.log('paso wachin');
+							console.log(response);
+						})
+						.error(function(data, status, headers, config) {
+						// handle error things
+							console.error(data,status);
+						})
+						}
 				}
 				else{
 					window.plugins.toast.showLongBottom("Voto Cancelado");	
