@@ -1134,7 +1134,7 @@ angular.module('app.controllers', [])
 	}
 })
 
-.controller('vEscenicasCtrl', function($scope, $ionicModal, $ionicPopup, $state, personasService) {
+.controller('vEscenicasCtrl', function($scope, $ionicModal, $ionicPopup, $state, $http) {
 			$scope.serverSideList = [
 			{ text: "El barbero sin utopías",value: "57c9aeaec25136ba0c96976e", value1: "Grupo Máscara Demoño" },
 			{ text: "El Grito de la Jauría",value: "57c9aecec25136ba0c96976f", value1: "Aurática Compañía Teatral" },
@@ -1157,7 +1157,6 @@ angular.module('app.controllers', [])
 				if(res) {
 					window.plugins.toast.showLongBottom("Gracias por su voto!");
 					window.localStorage.setItem("voto_escenicas", item.value);
-					    $scope.enviar_voto = function () {
 						var obj = {};
 						obj.nombre = window.localStorage.getItem("NombreP");
 						obj.apellido = window.localStorage.getItem("ApellidoP");
@@ -1169,20 +1168,18 @@ angular.module('app.controllers', [])
 						obj.voto_musica = window.localStorage.getItem("voto_musica");
 						obj.voto_escenicas = window.localStorage.getItem("voto_escenicas");
 						obj.voto_letras = window.localStorage.getItem("voto_letras");
-						
-						personasService.enviar_voto( obj ).then(function (res) {
-							$state.go('menu.vAgradece');
-						},function (res) {
-							console.log('Errores al enviar voto al servidor');
-						});
-						};
-					$state.go('menu.vAgradece');
-				}else{
-					window.plugins.toast.showLongBottom("Voto Cancelado");
-				} 
-			});
-		}
+						var res = $http.post('http://bienal.unl.edu.ar/api/v1/personas/'+obj);
+						 res.success(function(data, status, headers, config) {
+            				console.log(data);
+							$state.go('menu.vAgradece'); 
+						 })
+				}
+				else{
+					window.plugins.toast.showLongBottom("Voto Cancelado");	
+			}
+		});
 	}
+}
 })
 
 .controller('votacionCtrl', function($scope, $ionicModal, $ionicPopup, $state){
