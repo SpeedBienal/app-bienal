@@ -7,11 +7,11 @@ angular.module('app.services', [])
       cotejar_datos_de_persona: function ( nombre, apellido, email, dni, uuid ) {
         var obj = {nombre: nombre, apellido: apellido, email: email, dni: dni, uuid: uuid};
         return $http
-          .post('http://localhost:3000/api/v1/personas/buscar/', obj);
+          .post('http://bienal.unl.edu.ar/api/v1/personas/buscar/', obj);
       },
 
       enviar_voto: function ( obj ) {
-        return $http.post('http://localhost:3000/api/v1/personas/', obj );
+        return $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj );
       }
     }
   }
