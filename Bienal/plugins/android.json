@@ -36,6 +36,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-http": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
         }
     },
     "dependent_plugins": {
@@ -43,6 +46,9 @@
             "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
         },
         "org.loicknuchel.cordova.deviceaccounts": {
+            "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.speedbienal.bienaldeartejoven"
         }
     }
