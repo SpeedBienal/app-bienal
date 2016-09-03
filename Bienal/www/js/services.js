@@ -9,7 +9,6 @@ angular.module('app.services', [])
         return $http
           .post('http://bienal.unl.edu.ar/api/v1/personas/buscar/', obj);
       },
-
       enviar_voto: function ( obj ) {
         return $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj );
       }

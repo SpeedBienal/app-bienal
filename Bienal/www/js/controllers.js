@@ -1134,7 +1134,7 @@ angular.module('app.controllers', [])
 	}
 })
 
-.controller('vEscenicasCtrl', function($scope, $ionicModal, $ionicPopup, $state) {
+.controller('vEscenicasCtrl', function($scope, $ionicModal, $ionicPopup, $state, personasService) {
 			$scope.serverSideList = [
 			{ text: "El barbero sin utopías",value: "57c9aeaec25136ba0c96976e", value1: "Grupo Máscara Demoño" },
 			{ text: "El Grito de la Jauría",value: "57c9aecec25136ba0c96976f", value1: "Aurática Compañía Teatral" },
