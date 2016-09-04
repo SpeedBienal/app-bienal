@@ -1,7 +1,9 @@
 angular.module('app.controllers', [])        
 
   //codigo feo por que nos pagaron poco por mucho xD
-.controller('inicioCtrl', function($scope,$state,$ionicPopup) {
+.controller('inicioCtrl', function($scope,$state,$ionicPopup, $http) {
+	var recive = $http.get('http://bienal.unl.edu.ar/api/v1/obras')
+	window.console.log(recive);
 	$scope.share = function(){
 		var options = {message: '#SoyBienal 12° Bienal de Arte Joven de la UNL', 
 		url: 'http://unl.edu.ar/bienal',
@@ -1168,9 +1170,18 @@ angular.module('app.controllers', [])
 						obj.voto_musica = window.localStorage.getItem('voto_musica');
 						obj.voto_escenicas = window.localStorage.getItem('voto_escenicas');
 						obj.voto_letras = window.localStorage.getItem('voto_letras');
-						return $http.post('http://localhost:3000/api/personas/', obj );
-						//$state.go('menu.vAgradece'); 
-								//console.log('paso wachin');
+						$scope.enviar_voto= function ( obj ) {
+							res = $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj);
+						} 
+						enviar_voto.then(function (res){
+							window.console.log(res);
+						});
+                         window.console.log(res);
+						 
+						 //if (res) {
+                            //console.log(data);
+                            //$state.go('menu.vAgradece'); 
+                         //}
 				}
 				else{
 					window.plugins.toast.showLongBottom('Voto Cancelado');	
