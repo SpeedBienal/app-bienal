@@ -1170,13 +1170,20 @@ angular.module('app.controllers', [])
 						obj.voto_musica = window.localStorage.getItem('voto_musica');
 						obj.voto_escenicas = window.localStorage.getItem('voto_escenicas');
 						obj.voto_letras = window.localStorage.getItem('voto_letras');
-						$scope.enviar_voto= function ( obj ) {
-							res = $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj);
-						} 
-						enviar_voto.then(function (res){
-							window.console.log(res);
-						});
-                         window.console.log(res);
+				        var config = {
+                			headers : {
+                    			'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                			}
+            			}
+						var posteo = $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj, config)
+							.success(function(data, status, headers, config){
+								$state.go('menu.vAgradece')
+								}
+							)
+							.error(function(data, status, headers, config){
+								window.console.log(status+" "+headers);
+								}
+							)
 						 
 						 //if (res) {
                             //console.log(data);
