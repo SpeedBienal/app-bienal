@@ -1170,8 +1170,7 @@ angular.module('app.controllers', [])
 						obj.voto_musica = window.localStorage.getItem('voto_musica');
 						obj.voto_escenicas = window.localStorage.getItem('voto_escenicas');
 						obj.voto_letras = window.localStorage.getItem('voto_letras');
-						window.console.log('nombre'+obj.nombre);
-						window.console.log('apellido'+obj.apellido);
+						window.console.log(obj);
 						var posteo = $http.post('http://bienal.unl.edu.ar/api/v1/personas/', obj)
 							.success(function(obj, status, headers){
 								$state.go('menu.vAgradece')
@@ -1196,5 +1195,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('votacionCtrl', function($scope, $ionicModal, $ionicPopup, $state){
-
+$scope.salir = function(){
+		$state.go('menu.inicio');
+	}
 })
