@@ -1159,7 +1159,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('vEscenicasCtrl', function($scope, $ionicModal, $ionicPopup, $state, $http) {
-	if (window.localStorage.getItem('voto_audiovisuales') === null)
+	if (window.localStorage.getItem('voto_escenicas') === null)
 	{
 			$scope.serverSideList = [
 				{ text: 'El barbero sin utopías',value: '57c9aeaec25136ba0c96976e', value1: 'Grupo Máscara Demoño' },
